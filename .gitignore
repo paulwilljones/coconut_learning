@@ -1,0 +1,8 @@
+coconut_learning/*.py[c]
+!coconut_learning/__init__.py
+
+*.egg
+*.egg-info
+
+tests/*.py[c]
+!tests/__init__.py

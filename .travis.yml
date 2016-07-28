@@ -1,0 +1,5 @@
+language: python
+install:
+  - coconut .
+script:
+  - python setup.py test

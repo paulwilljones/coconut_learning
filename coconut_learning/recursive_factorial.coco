@@ -1,0 +1,14 @@
+@recursive
+def factorial(n, acc=1):
+    """Compute n! where n is an integer >= 0."""
+    case n:
+        match 0:
+            return acc
+        match _ is int if n > 0:
+            return factorial(n-1, acc*n)
+    else:
+        raise TypeError("the argument to factorial must be an integer >= 0")
+
+# Test cases:
+0 |> factorial |> print # 1
+3 |> factorial |> print # 6
