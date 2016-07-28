@@ -1,5 +1,6 @@
 language: python
 install:
-  - coconut .
+  - coconut -f ./coconut_learning/
+  - coconut -f ./tests/
 script:
   - python setup.py test
