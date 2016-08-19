@@ -1,0 +1,29 @@
+from coconut_learning import vector_field
+import unittest
+
+
+class TestVectorField(unittest.TestCase):
+  def test_iterator_return(self):
+    assert vector_field.diagonal_line(0) `isinstance` (list, tuple) == False
+
+  def test_zero_point_diagonal(self):
+    assert vector_field.diagonal_line(0) |> list == [(0, 0)]
+
+  def test_one_point_diagonal(self):
+    assert vector_field.diagonal_line(1) |> list == [(0, 1), (1, 0)]
+
+  def test_zero_linearized_plane(self):
+    assert vector_field.linearized_plane()$[0] == (0, 0)
+
+  def test_three_point_linearized_plane(self):
+    assert vector_field.linearized_plane()$[:3] |> list == [(0, 0), (0, 1), (1, 0)]
+
+  def test_vector_field_single_point(self):
+    assert vector_field.vector_field()$[0] == vector_field.vector(0, 0)
+
+  def test_vector_field_two_points(self):
+    assert vector_field.vector_field()$[2:3] |> list == [vector_field.vector(1, 0)]
+
+
+if __name__ == '__main__':
+  unittest.main()
