@@ -7,5 +7,5 @@ build:
 	coconut -f ./coconut_learning/
 	coconut -f ./tests/
 
-test:
+test: build
 	python setup.py test
